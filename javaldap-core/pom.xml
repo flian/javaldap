@@ -13,7 +13,11 @@
 
     <name>javaldap-core</name>
     <packaging>jar</packaging>
-
+<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.source.version>1.8</java.source.version>
+    <java.target.version>1.8</java.target.version>
+</properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/xerces/xerces -->
         <dependency>

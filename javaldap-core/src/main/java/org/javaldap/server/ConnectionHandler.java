@@ -34,6 +34,13 @@ import org.javaldap.ldapv3.*;
 public class ConnectionHandler extends Thread {
 	private MessageHandler msgHandler = null;
 
+	public ConnectionHandler() throws Exception {
+		msgHandler = (MessageHandler)MessageHandlerPool.getInstance().checkOut();
+		msgHandler.reset();
+		msgHandler.getConnection().setDebug(false);
+		setPriority(NORM_PRIORITY-1);
+	}
+
 	public ConnectionHandler(Socket client) throws Exception {
 
 		client.setTcpNoDelay(true);
