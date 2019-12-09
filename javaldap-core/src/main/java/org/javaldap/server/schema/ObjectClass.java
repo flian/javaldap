@@ -140,10 +140,10 @@ public class ObjectClass {
 		if (getMust() != null && !getMust().isEmpty()) {
 			if (getMust().size() > 1) {
 				objClass = objClass.concat(" MUST ( ");
-				Enumeration enum = getMust().elements();
-				while (enum.hasMoreElements()) {
-					objClass = objClass.concat(((DirectoryString)enum.nextElement()).toString());
-					if (enum.hasMoreElements()) {
+				Enumeration enumItem = getMust().elements();
+				while (enumItem.hasMoreElements()) {
+					objClass = objClass.concat(((DirectoryString)enumItem.nextElement()).toString());
+					if (enumItem.hasMoreElements()) {
 						objClass = objClass.concat(" $ ");
 					}
 				}
@@ -155,10 +155,10 @@ public class ObjectClass {
 		if (getMay() != null && !getMay().isEmpty()) {
 			if (getMay().size() > 1) {
 				objClass = objClass.concat(" MAY ( ");
-				Enumeration enum = getMay().elements();
-				while (enum.hasMoreElements()) {
-					objClass = objClass.concat(((DirectoryString)enum.nextElement()).toString());
-					if (enum.hasMoreElements()) {
+				Enumeration enumItem = getMay().elements();
+				while (enumItem.hasMoreElements()) {
+					objClass = objClass.concat(((DirectoryString)enumItem.nextElement()).toString());
+					if (enumItem.hasMoreElements()) {
 						objClass = objClass.concat(" $ ");
 					}
 				}
